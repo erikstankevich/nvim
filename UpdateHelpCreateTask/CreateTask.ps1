@@ -1,6 +1,6 @@
 $file = ".\UpdateHelp"
 $minutes = 1
-$alpha = "UpdateHelpCreateTask"
+$TaskName = "UpdateHelpCreateTask"
 
 
 $t1 = New-ScheduledTaskTrigger -Daily -At 09:00
@@ -13,4 +13,4 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File $fi
 $task = New-ScheduledTask -Action $action -Trigger $t1
 
 
-Register-ScheduledTask $alpha -InputObject $task
+Register-ScheduledTask -Taskname $TaskName -InputObject $task
